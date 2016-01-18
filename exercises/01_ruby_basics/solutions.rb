@@ -1,0 +1,2768 @@
+#::::::::  :::::::::: ::::::::   ::::::::  :::::::::  :::::::::: ::::::::
+#+:    :+: :+:       :+:    :+: :+:    :+: :+:    :+: :+:       :+:    :+:
+#:+    +:+ +:+       +:+        +:+    +:+ +:+    +:+ +:+       +:+
+##++:++#:  +#++:++#  +#+        +#+    +:+ +#+    +:+ +#++:++#  +#+
+##+    +#+ +#+       +#+        +#+    +#+ +#+    +#+ +#+       +#+
+#+#    #+# #+#       #+#    #+# #+#    #+# #+#    #+# #+#       #+#    #+#
+###    ### ########## ########   ########  #########  ########## ########
+
+# Ruby obfuscation tool
+  $code = ""
+  Object.instance_eval do
+    def const_missing(s); $code << s.to_s; 0; end
+    const_defined?(:GC) and remove_const(:GC)  # Holy moly!
+  end
+ TA
+A--T
+C---G
+A----T
+ A----T
+  A----T
+   C---G
+    A--T
+     CG
+     AT
+    G--C
+   G---C
+  G----C
+ G----C
+C----G
+G---C
+A--T
+ GC
+ TA
+G--C
+G---C
+G----C
+ T----A
+  G----C
+   C---G
+    A--T
+     TA
+     GC
+    C--G
+   T---A
+  C----G
+ G----C
+A----T
+A---T
+C--G
+ AT
+ GC
+A--T
+C---G
+G----C
+ A----T
+  A----T
+   C---G
+    A--T
+     TA
+     AT
+    T--A
+   G---C
+  A----T
+ G----C
+T----A
+G---C
+C--G
+ AT
+ TA
+G--C
+G---C
+C----G
+ C----G
+  G----C
+   C---G
+    T--A
+     CG
+     GC
+    T--A
+   G---C
+  C----G
+ G----C
+A----T
+A---T
+C--G
+ AT
+ TA
+T--A
+C---G
+G----C
+ C----G
+  G----C
+   C---G
+    G--C
+     AT
+     AT
+    C--G
+   A---T
+  T----A
+ G----C
+C----G
+G---C
+C--G
+ AT
+ TA
+G--C
+G---C
+G----C
+ C----G
+  G----C
+   G---C
+    G--C
+     CG
+     GC
+    A--T
+   G---C
+  T----A
+ G----C
+G----C
+C---G
+C--G
+ GC
+ CG
+T--A
+C---G
+G----C
+ T----A
+  G----C
+   C---G
+    G--C
+     CG
+     CG
+    A--T
+   A---T
+  A----T
+ G----C
+C----G
+G---C
+G--C
+ GC
+ CG
+G--C
+C---G
+G----C
+ C----G
+  G----C
+   A---T
+    A--T
+     CG
+     AT
+    T--A
+   G---C
+  T----A
+ G----C
+G----C
+G---C
+C--G
+ GC
+ AT
+T--A
+C---G
+G----C
+ T----A
+  A----T
+   C---G
+    G--C
+     TA
+     TA
+    C--G
+   G---C
+  G----C
+ T----A
+C----G
+G---C
+G--C
+ GC
+ CG
+G--C
+T---A
+T----A
+ G----C
+  G----C
+   G---C
+    T--A
+     CG
+     GC
+    G--C
+   G---C
+  C----G
+ G----C
+T----A
+A---T
+T--A
+ GC
+ TA
+A--T
+T---A
+G----C
+ G----C
+  A----T
+   C---G
+    G--C
+     TA
+     GC
+    C--G
+   G---C
+  G----C
+ G----C
+C----G
+G---C
+C--G
+ CG
+ AT
+A--T
+A---T
+A----T
+ C----G
+  A----T
+   A---T
+    A--T
+     CG
+     AT
+    C--G
+   A---T
+  C----G
+ A----T
+A----T
+C---G
+A--T
+ GC
+ GC
+G--C
+C---G
+G----C
+ A----T
+  T----A
+   C---G
+    G--C
+     AT
+     TA
+    C--G
+   G---C
+  T----A
+ T----A
+C----G
+G---C
+A--T
+ TA
+ CG
+A--T
+A---T
+A----T
+ C----G
+  A----T
+   T---A
+    G--C
+     GC
+     GC
+    T--A
+   T---A
+  C----G
+ G----C
+C----G
+A---T
+T--A
+ GC
+ AT
+T--A
+C---G
+G----C
+ A----T
+  G----C
+   C---G
+    G--C
+     GC
+     AT
+    C--G
+   A---T
+  C----G
+ A----T
+C----G
+A---T
+C--G
+ CG
+ AT
+A--T
+G---C
+G----C
+ C----G
+  G----C
+   C---G
+    T--A
+     CG
+     GC
+    A--T
+   G---C
+  C----G
+ G----C
+C----G
+C---G
+A--T
+ AT
+ CG
+C--G
+A---T
+A----T
+ T----A
+  A----T
+   C---G
+    A--T
+     AT
+     AT
+    C--G
+   A---T
+  G----C
+ C----G
+A----T
+G---C
+G--C
+ TA
+ CG
+G--C
+A---T
+A----T
+ T----A
+  G----C
+   A---T
+    T--A
+     CG
+     GC
+    G--C
+   G---C
+  C----G
+ G----C
+G----C
+T---A
+C--G
+ GC
+ GC
+G--C
+C---G
+G----C
+ C----G
+  T----A
+   C---G
+    G--C
+     AT
+     GC
+    T--A
+   G---C
+  A----T
+ A----T
+C----G
+A---T
+A--T
+ GC
+ TA
+G--C
+A---T
+C----G
+ C----G
+  G----C
+   G---C
+    G--C
+     CG
+     GC
+    A--T
+   A---T
+  C----G
+ A----T
+C----G
+G---C
+C--G
+ GC
+ GC
+A--T
+C---G
+G----C
+ T----A
+  A----T
+   C---G
+    G--C
+     AT
+     GC
+    T--A
+   G---C
+  T----A
+ T----A
+C----G
+G---C
+C--G
+ AT
+ TA
+G--C
+G---C
+C----G
+ C----G
+  G----C
+   G---C
+    A--T
+     CG
+     GC
+    A--T
+   T---A
+  C----G
+ G----C
+A----T
+A---T
+C--G
+ AT
+ CG
+G--C
+C---G
+G----C
+ G----C
+  G----C
+   T---A
+    G--C
+     CG
+     TA
+    C--G
+   G---C
+  T----A
+ A----T
+C----G
+G---C
+A--T
+ GC
+ TA
+G--C
+G---C
+C----G
+ C----G
+  G----C
+   T---A
+    T--A
+     CG
+     GC
+    C--G
+   T---A
+  C----G
+ G----C
+C----G
+C---G
+A--T
+ AT
+ AT
+G--C
+C---G
+G----C
+ G----C
+  G----C
+   C---G
+    G--C
+     CG
+     GC
+    C--G
+   G---C
+  A----T
+ A----T
+C----G
+A---T
+C--G
+ GC
+ CG
+G--C
+G---C
+A----T
+ C----G
+  G----C
+   T---A
+    A--T
+     CG
+     GC
+    A--T
+   G---C
+  T----A
+ G----C
+T----A
+T---A
+C--G
+ GC
+ CG
+A--T
+T---A
+G----C
+ G----C
+  C----G
+   C---G
+    G--C
+     GC
+     AT
+    C--G
+   G---C
+  A----T
+ T----A
+C----G
+G---C
+A--T
+ CG
+ CG
+A--T
+C---G
+T----A
+ C----G
+  G----C
+   G---C
+    C--G
+     CG
+     AT
+    C--G
+   C---G
+  A----T
+ A----T
+A----T
+A---T
+C--G
+ AT
+ AT
+A--T
+C---G
+A----T
+ A----T
+  A----T
+   A---T
+    G--C
+     TA
+     AT
+    C--G
+   G---C
+  G----C
+ A----T
+C----G
+G---C
+T--A
+ AT
+ CG
+G--C
+A---T
+C----G
+ C----G
+  G----C
+   G---C
+    G--C
+     CG
+     GC
+    A--T
+   A---T
+  C----G
+ A----T
+A----T
+T---A
+T--A
+ GC
+ AT
+T--A
+T---A
+G----C
+ G----C
+  T----A
+   T---A
+    A--T
+     AT
+     AT
+    C--G
+   A---T
+  T----A
+ C----G
+G----C
+G---C
+G--C
+ AT
+ TA
+A--T
+A---T
+T----A
+ C----G
+  A----T
+   A---T
+    A--T
+     CG
+     AT
+    G--C
+   A---T
+  T----A
+ A----T
+G----C
+T---A
+G--C
+ GC
+ CG
+C--G
+A---T
+A----T
+ A----T
+  A----T
+   C---G
+    A--T
+     AT
+     AT
+    C--G
+   A---T
+  A----T
+ A----T
+A----T
+G---C
+T--A
+ AT
+ CG
+G--C
+G---C
+A----T
+ C----G
+  G----C
+   T---A
+    A--T
+     CG
+     GC
+    A--T
+   C---G
+  C----G
+ G----C
+G----C
+G---C
+C--G
+ GC
+ TA
+C--G
+G---C
+G----C
+ C----G
+  T----A
+   C---G
+    G--C
+     GC
+     TA
+    G--C
+   G---C
+  A----T
+ A----T
+C----G
+A---T
+A--T
+ TA
+ TA
+G--C
+A---T
+T----A
+ T----A
+  G----C
+   G---C
+    T--A
+     TA
+     AT
+    A--T
+   A---T
+  C----G
+ A----T
+C----G
+G---C
+C--G
+ GC
+ GC
+A--T
+C---G
+G----C
+ T----A
+  A----T
+   C---G
+    G--C
+     AT
+     GC
+    T--A
+   G---C
+  T----A
+ T----A
+C----G
+G---C
+C--G
+ AT
+ TA
+G--C
+G---C
+C----G
+ C----G
+  G----C
+   G---C
+    A--T
+     CG
+     GC
+    A--T
+   T---A
+  C----G
+ G----C
+A----T
+C---G
+C--G
+ AT
+ CG
+T--A
+C---G
+G----C
+ A----T
+  A----T
+   C---G
+    A--T
+     GC
+     TA
+    C--G
+   A---T
+  A----T
+ A----T
+C----G
+A---T
+G--C
+ AT
+ TA
+A--T
+G---C
+C----G
+ C----G
+  A----T
+   A---T
+    A--T
+     CG
+     AT
+    C--G
+   C---G
+  C----G
+ A----T
+A----T
+A---T
+C--G
+ AT
+ CG
+T--A
+C---G
+G----C
+ C----G
+  C----G
+   A---T
+    A--T
+     GC
+     GC
+    C--G
+   G---C
+  C----G
+ T----A
+C----G
+G---C
+A--T
+ GC
+ CG
+G--C
+C---G
+C----G
+ A----T
+  A----T
+   C---G
+    C--G
+     AT
+     AT
+    T--A
+   A---T
+  C----G
+ A----T
+A----T
+A---T
+C--G
+ AT
+ CG
+G--C
+A---T
+G----C
+ G----C
+  C----G
+   C---G
+    G--C
+     CG
+     TA
+    C--G
+   G---C
+  A----T
+ G----C
+C----G
+G---C
+A--T
+ AT
+ CG
+A--T
+A---T
+G----C
+ T----A
+  G----C
+   A---T
+    C--G
+     CG
+     GC
+    G--C
+   G---C
+  C----G
+ G----C
+A----T
+A---T
+C--G
+ AT
+ CG
+G--C
+C---G
+G----C
+ G----C
+  C----G
+   C---G
+    G--C
+     CG
+     AT
+    T--A
+   G---C
+  T----A
+ A----T
+T----A
+G---C
+A--T
+ GC
+ TA
+G--C
+A---T
+A----T
+ C----G
+  A----T
+   C---G
+    G--C
+     CG
+     GC
+    G--C
+   A---T
+  C----G
+ G----C
+T----A
+A---T
+C--G
+ GC
+ AT
+G--C
+T---A
+G----C
+ T----A
+  T----A
+   C---G
+    G--C
+     CG
+     AT
+    T--A
+   G---C
+  G----C
+ C----G
+C----G
+G---C
+G--C
+ AT
+ CG
+G--C
+A---T
+T----A
+ C----G
+  G----C
+   A---T
+    A--T
+     CG
+     AT
+    C--G
+   T---A
+  C----G
+ G----C
+G----C
+G---C
+T--A
+ GC
+ GC
+T--A
+C---G
+G----C
+ C----G
+  A----T
+   C---G
+    G--C
+     GC
+     GC
+    C--G
+   G---C
+  C----G
+ A----T
+T----A
+G---C
+A--T
+ AT
+ CG
+A--T
+T---A
+G----C
+ C----G
+  G----C
+   C---G
+    A--T
+     TA
+     GC
+    G--C
+   G---C
+  C----G
+ G----C
+G----C
+A---T
+C--G
+ GC
+ AT
+G--C
+T---A
+G----C
+ G----C
+  G----C
+   C---G
+    G--C
+     CG
+     AT
+    T--A
+   G---C
+  A----T
+ A----T
+C----G
+A---T
+A--T
+ GC
+ TA
+G--C
+A---T
+C----G
+ C----G
+  G----C
+   G---C
+    A--T
+     CG
+     GC
+    C--G
+   T---A
+  C----G
+ G----C
+A----T
+A---T
+C--G
+ AT
+ GC
+T--A
+C---G
+G----C
+ C----G
+  C----G
+   A---T
+    A--T
+     AT
+     GC
+    C--G
+   G---C
+  G----C
+ G----C
+C----G
+G---C
+C--G
+ GC
+ CG
+G--C
+A---T
+A----T
+ C----G
+  A----T
+   C---G
+    G--C
+     CG
+     GC
+    G--C
+   A---T
+  C----G
+ G----C
+T----A
+A---T
+C--G
+ GC
+ AT
+G--C
+T---A
+G----C
+ T----A
+  T----A
+   C---G
+    G--C
+     CG
+     AT
+    T--A
+   G---C
+  G----C
+ C----G
+C----G
+G---C
+G--C
+ AT
+ CG
+G--C
+A---T
+T----A
+ C----G
+  G----C
+   T---A
+    T--A
+     GC
+     GC
+    C--G
+   A---T
+  C----G
+ G----C
+G----C
+C---G
+C--G
+ GC
+ TA
+G--C
+C---G
+G----C
+ T----A
+  G----C
+   C---G
+    G--C
+     GC
+     GC
+    C--G
+   G---C
+  C----G
+ A----T
+T----A
+G---C
+T--A
+ TA
+ GC
+G--C
+A---T
+G----C
+ T----A
+  G----C
+   A---T
+    C--G
+     CG
+     GC
+    G--C
+   A---T
+  C----G
+ G----C
+C----G
+T---A
+C--G
+ GC
+ AT
+C--G
+C---G
+A----T
+ G----C
+  T----A
+   C---G
+    G--C
+     GC
+     CG
+    C--G
+   A---T
+  C----G
+ C----G
+A----T
+A---T
+A--T
+ AT
+ CG
+A--T
+A---T
+A----T
+ C----G
+  A----T
+   G---C
+    C--G
+     CG
+     GC
+    C--G
+   T---A
+  C----G
+ G----C
+C----G
+G---C
+C--G
+ GC
+ AT
+A--T
+C---G
+A----T
+ G----C
+  T----A
+   T---A
+    A--T
+     AT
+     AT
+    C--G
+   A---T
+  C----G
+ G----C
+A----T
+G---C
+A--T
+ TA
+ CG
+G--C
+T---A
+T----A
+ C----G
+  G----C
+   G---C
+    A--T
+     CG
+     GC
+    A--T
+   G---C
+  T----A
+ G----C
+C----G
+C---G
+T--A
+ AT
+ CG
+C--G
+T---A
+A----T
+ G----C
+  C----G
+   A---T
+    G--C
+     CG
+     TA
+    A--T
+   G---C
+  C----G
+ G----C
+A----T
+G---C
+G--C
+ CG
+ AT
+G--C
+C---G
+T----A
+ A----T
+  G----C
+   G---C
+    C--G
+     AT
+     GC
+    A--T
+   G---C
+  G----C
+ G----C
+G----C
+C---G
+G--C
+ GC
+ CG
+C--G
+A---T
+A----T
+ A----T
+  A----T
+   C---G
+    A--T
+     AT
+     AT
+    C--G
+   A---T
+  A----T
+ C----G
+C----G
+A---T
+G--C
+ AT
+ TA
+A--T
+A---T
+A----T
+ C----G
+  A----T
+   C---G
+    T--A
+     CG
+     AT
+    C--G
+   T---A
+  C----G
+ A----T
+A----T
+A---T
+C--G
+ AT
+ GC
+C--G
+C---G
+G----C
+ C----G
+  T----A
+   C---G
+    G--C
+     CG
+     GC
+    C--G
+   G---C
+  G----C
+ C----G
+C----G
+A---T
+C--G
+ TA
+ CG
+A--T
+A---T
+T----A
+ C----G
+  G----C
+   G---C
+    A--T
+     CG
+     GC
+    C--G
+   C---G
+  T----A
+ G----C
+G----C
+C---G
+T--A
+ GC
+ CG
+T--A
+C---G
+A----T
+ G----C
+  T----A
+   C---G
+    G--C
+     GC
+     AT
+    C--G
+   G---C
+  A----T
+ A----T
+T----A
+G---C
+A--T
+ AT
+ CG
+A--T
+T---A
+C----G
+ T----A
+  G----C
+   A---T
+    A--T
+     CG
+     AT
+    A--T
+   T---A
+  T----A
+ G----C
+G----C
+C---G
+C--G
+ GC
+ AT
+T--A
+T---A
+G----C
+ A----T
+  A----T
+   C---G
+    A--T
+     CG
+     GC
+    C--G
+   G---C
+  G----C
+ A----T
+C----G
+G---C
+T--A
+ AT
+ CG
+G--C
+A---T
+G----C
+ T----A
+  G----C
+   T---A
+    T--A
+     CG
+     GC
+    C--G
+   A---T
+  T----A
+ G----C
+G----C
+C---G
+C--G
+ GC
+ GC
+A--T
+C---G
+G----C
+ A----T
+  T----A
+   C---G
+    G--C
+     AT
+     CG
+    C--G
+   A---T
+  G----C
+ C----G
+C----G
+G---C
+G--C
+ CG
+ CG
+A--T
+A---T
+A----T
+ C----G
+  A----T
+   G---C
+    T--A
+     TA
+     GC
+    C--G
+   T---A
+  C----G
+ A----T
+C----G
+G---C
+C--G
+ GC
+ GC
+C--G
+C---G
+G----C
+ C----G
+  T----A
+   C---G
+    G--C
+     AT
+     GC
+    C--G
+   G---C
+  A----T
+ A----T
+C----G
+A---T
+T--A
+ CG
+ TA
+G--C
+A---T
+A----T
+ C----G
+  A----T
+   A---T
+    T--A
+     TA
+     GC
+    C--G
+   C---G
+  C----G
+ G----C
+A----T
+T---A
+T--A
+ GC
+ AT
+A--T
+C---G
+A----T
+ C----G
+  C----G
+   C---G
+    G--C
+     AT
+     AT
+    C--G
+   A---T
+  C----G
+ T----A
+T----A
+A---T
+A--T
+ AT
+ CG
+A--T
+G---C
+T----A
+ C----G
+  G----C
+   A---T
+    A--T
+     CG
+     AT
+    G--C
+   T---A
+  T----A
+ G----C
+C----G
+C---G
+A--T
+ AT
+ GC
+G--C
+C---G
+G----C
+ C----G
+  T----A
+   C---G
+    G--C
+     AT
+     GC
+    C--G
+   G---C
+  C----G
+ C----G
+A----T
+A---T
+C--G
+ CG
+ AT
+A--T
+T---A
+A----T
+ C----G
+  A----T
+   A---T
+    A--T
+     CG
+     AT
+    C--G
+   G---C
+  A----T
+ G----C
+G----C
+C---G
+C--G
+ GC
+ CG
+T--A
+C---G
+G----C
+ A----T
+  G----C
+   C---G
+    G--C
+     AT
+     AT
+    C--G
+   A---T
+  A----T
+ G----C
+T----A
+G---C
+A--T
+ CG
+ CG
+G--C
+G---C
+G----C
+ C----G
+  G----C
+   A---T
+    A--T
+     CG
+     AT
+    A--T
+   T---A
+  C----G
+ G----C
+T----A
+T---A
+C--G
+ GC
+ CG
+T--A
+C---G
+G----C
+ T----A
+  G----C
+   C---G
+    G--C
+     GC
+     GC
+    C--G
+   G---C
+  T----A
+ A----T
+T----A
+G---C
+A--T
+ GC
+ TA
+G--C
+A---T
+A----T
+ C----G
+  A----T
+   T---A
+    A--T
+     TA
+     GC
+    A--T
+   G---C
+  T----A
+ G----C
+C----G
+A---T
+T--A
+ GC
+ GC
+C--G
+C---G
+G----C
+ C----G
+  T----A
+   C---G
+    G--C
+     TA
+     GC
+    C--G
+   G---C
+  A----T
+ A----T
+C----G
+A---T
+G--C
+ CG
+ CG
+G--C
+C---G
+T----A
+ C----G
+  G----C
+   A---T
+    A--T
+     CG
+     AT
+    G--C
+   A---T
+  C----G
+ G----C
+A----T
+A---T
+C--G
+ AT
+ CG
+G--C
+T---A
+G----C
+ G----C
+  G----C
+   C---G
+    G--C
+     TA
+     AT
+    C--G
+   G---C
+  A----T
+ G----C
+T----A
+G---C
+T--A
+ TA
+ CG
+G--C
+C---G
+A----T
+ T----A
+  G----C
+   C---G
+    C--G
+     AT
+     AT
+    A--T
+   G---C
+  C----G
+ G----C
+G----C
+G---C
+C--G
+ GC
+ CG
+G--C
+C---G
+G----C
+ A----T
+  A----T
+   C---G
+    A--T
+     CG
+     GC
+    C--G
+   G---C
+  G----C
+ C----G
+C----G
+G---C
+C--G
+ TA
+ CG
+G--C
+A---T
+G----C
+ C----G
+  G----C
+   T---A
+    T--A
+     GC
+     GC
+    A--T
+   T---A
+  C----G
+ G----C
+T----A
+T---A
+C--G
+ GC
+ CG
+T--A
+C---G
+G----C
+ T----A
+  G----C
+   C---G
+    G--C
+     GC
+     GC
+    C--G
+   G---C
+  T----A
+ A----T
+T----A
+G---C
+A--T
+ GC
+ TA
+G--C
+T---A
+T----A
+ G----C
+  G----C
+   T---A
+    A--T
+     TA
+     GC
+    A--T
+   G---C
+  T----A
+ G----C
+C----G
+A---T
+T--A
+ GC
+ GC
+C--G
+C---G
+G----C
+ C----G
+  T----A
+   C---G
+    G--C
+     TA
+     GC
+    C--G
+   G---C
+  A----T
+ C----G
+C----G
+A---T
+G--C
+ AT
+ CG
+G--C
+C---G
+A----T
+ T----A
+  G----C
+   C---G
+    A--T
+     TA
+     GC
+    G--C
+   A---T
+  C----G
+ G----C
+G----C
+C---G
+T--A
+ GC
+ GC
+C--G
+C---G
+A----T
+ C----G
+  C----G
+   A---T
+    A--T
+     AT
+     AT
+    C--G
+   A---T
+  A----T
+ A----T
+C----G
+A---T
+G--C
+ AT
+ CG
+G--C
+C---G
+A----T
+ T----A
+  G----C
+   C---G
+    A--T
+     TA
+     GC
+    G--C
+   A---T
+  C----G
+ G----C
+G----C
+C---G
+T--A
+ GC
+ CG
+T--A
+C---G
+A----T
+ G----C
+  T----A
+   C---G
+    G--C
+     GC
+     AT
+    C--G
+   G---C
+  A----T
+ C----G
+T----A
+G---C
+T--A
+ TA
+ GC
+G--C
+C---G
+A----T
+ C----G
+  G----C
+   G---C
+    C--G
+     TA
+     GC
+    A--T
+   C---G
+  C----G
+ A----T
+C----G
+G---C
+C--G
+ AT
+ CG
+C--G
+T---A
+A----T
+ A----T
+  T----A
+   C---G
+    G--C
+     GC
+     GC
+    C--G
+   G---C
+  C----G
+ T----A
+C----G
+G---C
+T--A
+ GC
+ CG
+G--C
+A---T
+G----C
+ T----A
+  G----C
+   A---T
+    C--G
+     CG
+     GC
+    G--C
+   C---G
+  C----G
+ A----T
+C----G
+C---G
+A--T
+ AT
+ GC
+G--C
+C---G
+G----C
+ C----G
+  T----A
+   C---G
+    G--C
+     AT
+     GC
+    C--G
+   G---C
+  C----G
+ C----G
+A----T
+A---T
+C--G
+ CG
+ AT
+A--T
+T---A
+A----T
+ C----G
+  A----T
+   A---T
+    A--T
+     CG
+     AT
+    C--G
+   G---C
+  A----T
+ G----C
+G----C
+C---G
+C--G
+ GC
+ CG
+T--A
+C---G
+G----C
+ A----T
+  G----C
+   C---G
+    G--C
+     AT
+     AT
+    C--G
+   A---T
+  G----C
+ C----G
+C----G
+G---C
+C--G
+ GC
+ CG
+G--C
+A---T
+A----T
+ C----G
+  A----T
+   G---C
+    A--T
+     CG
+     GC
+    C--G
+   T---A
+  C----G
+ G----C
+A----T
+A---T
+C--G
+ AT
+ GC
+A--T
+C---G
+G----C
+ C----G
+  A----T
+   T---A
+    G--C
+     CG
+     AT
+    T--A
+   G---C
+  G----C
+ A----T
+C----G
+G---C
+G--C
+ CG
+ TA
+G--C
+A---T
+A----T
+ C----G
+  A----T
+   A---T
+    C--G
+     CG
+     GC
+    G--C
+   A---T
+  C----G
+ G----C
+T----A
+A---T
+T--A
+ GC
+ AT
+A--T
+C---G
+A----T
+ C----G
+  T----A
+   C---G
+    G--C
+     GC
+     GC
+    C--G
+   G---C
+  T----A
+ A----T
+T----A
+G---C
+A--T
+ GC
+ TA
+G--C
+G---C
+G----C
+ C----G
+  G----C
+   A---T
+    G--C
+     CG
+     GC
+    A--T
+   A---T
+  C----G
+ A----T
+G----C
+A---T
+C--G
+ GC
+ CG
+A--T
+T---A
+G----C
+ C----G
+  A----T
+   T---A
+    G--C
+     GC
+     AT
+    C--G
+   G---C
+  G----C
+ C----G
+T----A
+G---C
+T--A
+ AT
+ TA
+G--C
+A---T
+A----T
+ C----G
+  A----T
+   G---C
+    C--G
+     CG
+     GC
+    C--G
+   T---A
+  C----G
+ G----C
+A----T
+A---T
+C--G
+ AT
+ GC
+C--G
+C---G
+G----C
+ A----T
+  G----C
+   T---A
+    G--C
+     CG
+     CG
+    A--T
+   A---T
+  A----T
+ G----C
+C----G
+G---C
+G--C
+ GC
+ CG
+G--C
+C---G
+G----C
+ C----G
+  G----C
+   A---T
+    A--T
+     CG
+     AT
+    A--T
+   C---G
+  C----G
+ G----C
+G----C
+A---T
+C--G
+ GC
+ TA
+A--T
+T---A
+G----C
+ T----A
+  T----A
+   G---C
+    G--C
+     CG
+     TA
+    C--G
+   G---C
+  G----C
+ G----C
+C----G
+G---C
+T--A
+ AT
+ TA
+G--C
+A---T
+G----C
+ T----A
+  G----C
+   G---C
+    G--C
+     CG
+     GC
+    A--T
+   G---C
+  C----G
+ G----C
+T----A
+T---A
+G--C
+ GC
+ GC
+A--T
+C---G
+G----C
+ C----G
+  A----T
+   T---A
+    G--C
+     CG
+     AT
+    T--A
+   G---C
+  G----C
+ A----T
+C----G
+G---C
+G--C
+ CG
+ TA
+G--C
+T---A
+T----A
+ T----A
+  A----T
+   A---T
+    C--G
+     CG
+     AT
+    G--C
+   A---T
+  C----G
+ G----C
+C----G
+A---T
+T--A
+ GC
+ CG
+A--T
+T---A
+G----C
+ G----C
+  A----T
+   C---G
+    G--C
+     GC
+     CG
+    T--A
+   G---C
+  G----C
+ C----G
+C----G
+A---T
+C--G
+ CG
+ AT
+A--T
+A---T
+A----T
+ C----G
+  A----T
+   A---T
+    A--T
+     CG
+     AT
+    G--C
+   A---T
+  C----G
+ G----C
+C----G
+A---T
+T--A
+ GC
+ CG
+A--T
+T---A
+G----C
+ G----C
+  A----T
+   C---G
+    G--C
+     GC
+     CG
+    T--A
+   G---C
+  C----G
+ T----A
+C----G
+A---T
+G--C
+ AT
+ CG
+G--C
+C---G
+T----A
+ C----G
+  G----C
+   G---C
+    C--G
+     TA
+     GC
+    T--A
+   T---A
+  T----A
+ A----T
+A----T
+A---T
+C--G
+ AT
+ TA
+C--G
+T---A
+G----C
+ A----T
+  A----T
+   C---G
+    A--T
+     AT
+     TA
+    T--A
+   G---C
+  G----C
+ G----C
+C----G
+G---C
+A--T
+ TA
+ TA
+G--C
+A---T
+A----T
+ C----G
+  A----T
+   G---C
+    G--C
+     CG
+     GC
+    C--G
+   T---A
+  C----G
+ A----T
+T----A
+C---G
+C--G
+ GC
+ GC
+C--G
+C---G
+G----C
+ C----G
+  T----A
+   C---G
+    G--C
+     AT
+     GC
+    C--G
+   G---C
+  T----A
+ T----A
+G----C
+G---C
+T--A
+ TA
+ CG
+G--C
+C---G
+G----C
+ C----G
+  G----C
+   T---A
+    T--A
+     TA
+     AT
+    A--T
+   A---T
+  C----G
+ A----T
+G----C
+A---T
+A--T
+ GC
+ CG
+A--T
+T---A
+G----C
+ C----G
+  A----T
+   T---A
+    G--C
+     GC
+     AT
+    C--G
+   G---C
+  G----C
+ C----G
+T----A
+G---C
+A--T
+ AT
+ CG
+A--T
+G---C
+T----A
+ T----A
+  G----C
+   C---G
+    C--G
+     AT
+     AT
+    G--C
+   G---C
+  C----G
+ G----C
+C----G
+T---A
+C--G
+ GC
+ AT
+G--C
+C---G
+G----C
+ C----G
+  C----G
+   A---T
+    A--T
+     CG
+     CG
+    A--T
+   A---T
+  T----A
+ A----T
+C----G
+A---T
+A--T
+ AT
+ CG
+A--T
+T---A
+A----T
+ A----T
+  G----C
+   T---A
+    T--A
+     CG
+     GC
+    G--C
+   G---C
+  T----A
+ G----C
+C----G
+T---A
+C--G
+ GC
+ AT
+G--C
+T---A
+G----C
+ A----T
+  A----T
+   C---G
+    A--T
+     AT
+     GC
+    T--A
+   G---C
+  A----T
+ C----G
+C----G
+G---C
+G--C
+ GC
+ CG
+G--C
+A---T
+A----T
+ C----G
+  A----T
+   C---G
+    T--A
+     CG
+     GC
+    G--C
+   G---C
+  T----A
+ G----C
+G----C
+T---A
+C--G
+ GC
+ CG
+A--T
+C---G
+G----C
+ G----C
+  G----C
+   C---G
+    G--C
+     CG
+     AT
+    T--A
+   G---C
+  A----T
+ A----T
+C----G
+A---T
+T--A
+ TA
+ CG
+G--C
+C---G
+G----C
+ C----G
+  G----C
+   A---T
+    A--T
+     CG
+     AT
+    G--C
+   G---C
+  T----A
+ G----C
+A----T
+A---T
+T--A
+ GC
+ TA
+A--T
+C---G
+G----C
+ G----C
+  A----T
+   C---G
+    G--C
+     TA
+     AT
+    T--A
+   G---C
+  G----C
+ G----C
+C----G
+G---C
+A--T
+ GC
+ CG
+G--C
+A---T
+A----T
+ C----G
+  A----T
+   A---T
+    T--A
+     CG
+     GC
+    G--C
+   G---C
+  C----G
+ G----C
+A----T
+G---C
+T--A
+ GC
+ AT
+G--C
+T---A
+G----C
+ G----C
+  G----C
+   C---G
+    G--C
+     CG
+     AT
+    T--A
+   G---C
+  T----A
+ A----T
+T----A
+G---C
+A--T
+ AT
+ CG
+A--T
+G---C
+C----G
+ C----G
+  G----C
+   C---G
+    T--A
+     CG
+     GC
+    A--T
+   A---T
+  C----G
+ A----T
+G----C
+A---T
+C--G
+ GC
+ AT
+A--T
+C---G
+A----T
+ T----A
+  A----T
+   T---A
+    G--C
+     AT
+     GC
+    T--A
+   G---C
+  C----G
+ A----T
+T----A
+G---C
+G--C
+ CG
+ CG
+G--C
+C---G
+T----A
+ C----G
+  G----C
+   T---A
+    G--C
+     CG
+     GC
+    C--G
+   C---G
+  A----T
+ A----T
+A----T
+G---C
+C--G
+ GC
+ GC
+G--C
+C---G
+G----C
+ C----G
+  G----C
+   C---G
+    G--C
+     AT
+     AT
+    C--G
+   A---T
+  T----A
+ A----T
+C----G
+G---C
+T--A
+ TA
+ CG
+G--C
+G---C
+G----C
+ T----A
+  G----C
+   C---G
+    T--A
+     CG
+     GC
+    A--T
+   G---C
+  T----A
+ G----C
+T----A
+T---A
+G--C
+ GC
+ GC
+G--C
+T---A
+G----C
+ A----T
+  A----T
+   T---A
+    G--C
+     TA
+     AT
+    C--G
+   G---C
+  G----C
+ A----T
+C----G
+G---C
+T--A
+ AT
+ TA
+G--C
+G---C
+G----C
+ C----G
+  G----C
+   A---T
+    G--C
+     CG
+     GC
+    T--A
+   T---A
+  G----C
+ G----C
+A----T
+T---A
+C--G
+ GC
+ GC
+G--C
+C---G
+G----C
+ A----T
+  G----C
+   T---A
+    G--C
+     AT
+     GC
+    T--A
+   G---C
+  G----C
+ G----C
+C----G
+G---C
+C--G
+ AT
+ TA
+G--C
+T---A
+A----T
+ T----A
+  G----C
+   A---T
+    C--G
+     CG
+     AT
+    T--A
+   A---T
+  T----A
+ G----C
+A----T
+G---C
+T--A
+ GC
+ CG
+A--T
+T---A
+G----C
+ G----C
+  C----G
+   C---G
+    G--C
+     CG
+     TA
+    C--G
+   G---C
+  T----A
+ G----C
+C----G
+G---C
+G--C
+ CG
+ CG
+A--T
+C---G
+C----G
+ A----T
+  A----T
+   A---T
+    A--T
+     CG
+     AT
+    A--T
+   A---T
+  C----G
+ A----T
+T----A
+A---T
+T--A
+ GC
+ AT
+G--C
+T---A
+G----C
+ C----G
+  A----T
+   T---A
+    G--C
+     GC
+     CG
+    C--G
+   G---C
+  C----G
+ T----A
+C----G
+G---C
+T--A
+ GC
+ CG
+G--C
+C---G
+T----A
+ C----G
+  A----T
+   T---A
+    A--T
+     TA
+     GC
+    T--A
+   A---T
+  C----G
+ G----C
+G----C
+A---T
+C--G
+ GC
+ CG
+T--A
+C---G
+G----C
+ A----T
+  C----G
+   C---G
+    A--T
+     TA
+     TA
+    C--G
+   A---T
+  T----A
+ C----G
+G----C
+G---C
+G--C
+ AT
+ AT
+G--C
+G---C
+T----A
+ C----G
+  A----T
+   C---G
+    C--G
+     GC
+     GC
+    G--C
+   T---A
+  G----C
+ G----C
+T----A
+T---A
+C--G
+ AT
+ GC
+C--G
+C---G
+A----T
+ C----G
+  T----A
+   C---G
+    A--T
+     AT
+     TA
+    C--G
+   G---C
+  G----C
+ G----C
+C----G
+G---C
+C--G
+ TA
+ CG
+G--C
+T---A
+G----C
+ C----G
+  G----C
+   A---T
+    G--C
+     TA
+     GC
+    A--T
+   C---G
+  C----G
+ G----C
+C----G
+C---G
+A--T
+ AT
+ GC
+G--C
+C---G
+G----C
+ C----G
+  T----A
+   C---G
+    G--C
+     AT
+     GC
+    C--G
+   G---C
+  C----G
+ C----G
+A----T
+A---T
+  dict = { "AT"=>"00", "CG"=>"01", "GC"=>"10", "TA"=>"11" }
+  eval([$code.gsub(/../) {|s| dict[s] }].pack("b*"))
