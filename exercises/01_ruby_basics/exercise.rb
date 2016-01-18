@@ -1,6 +1,6 @@
 # Return a string of greeting
 def welcome_message
-  "Pippo è pelato"
+  false
 end
 
 # Implement the factorial function
@@ -13,7 +13,7 @@ def factorial_bigger_than(m)
   false
 end
 
-# Find the longest string in a vector
+# Find the longest string in an array
 def find_longest_string(array)
   false
 end
