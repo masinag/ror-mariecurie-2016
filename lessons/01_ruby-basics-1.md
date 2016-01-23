@@ -340,16 +340,32 @@ When you have a huge block you can write it using multiple lines
 
 # Control flow
 
-namely `if`, `else` stuff
+namely `if`, `then`, `else` stuff
 
 ~~~ruby
 >> s = "a string"
->> if s.empty?
+>> if s.empty? then
 >>   "The string is empty"
 >> else
-?>   "The string is nonempty"
+>>   "The string is nonempty"
 >> end
 => "The string is nonempty"
+~~~
+
+you can omit `then`, its not mandatory.
+However, sometimes you might have lot of cases
+
+~~~ruby
+>> s = "a string"
+>> if s.empty? then
+>>   "The string is empty"
+>> elsif s.length < 4
+>>   "The string is nonempty and its length is less than 4"
+>> elsif s.length == 4
+>>   "The string is nonempty and its length is 4"
+>> else
+>>   "The string is nonempty and its length is more than 4"
+=> "The string is nonempty and its length is more than 4"
 ~~~
 
 we can also use `unless`
