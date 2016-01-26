@@ -111,16 +111,17 @@ puts Person.hello   # Ciao!
 ~~~
 
 
-## Class variables and instance variables
+## Local variables, class variables and instance variables
 
-Usually variables are written with lower case while constants are written in upper case
+Usually variables are written with lower case while constants are written in upper case.
 
 ~~~ruby
 variable = "This is a variable"
 CONSTANT = "This is a constant"
 ~~~
 
-With the `@` symbol you can define instance variables (e.g. `@name`). An instance variable is a variable that might assume different values among different instances. However, with no other methods it is not yet accessible.
+With the `@` symbol you can define instance variables (e.g. `@name`). An instance variable might assume different values among different instances. However, with no other methods it is not yet accessible.
+With the `@@` symbol you can define class variables (e.g.  `@@color`). A class variable is shared (have the same value) among all objects (instanes).
 
 ~~~ruby
 class Person
@@ -168,7 +169,7 @@ attr_writer :name, :surname
 attr_accessor :name, :surname
 ~~~
 
-In addition, define also a to_s method in order to be able to print you own instance!
+In addition, define also a `to_s` method in order to be able to print you own instance!
 
 ~~~ruby
 class Person
@@ -276,43 +277,6 @@ and now ladies and gentlemen...
 ~~~
 
 This is called *opening a built-in class* and you should do it only if you have a **REALLY** good reason.
-
-## Local vs. Instance vs. Class Variables
-
-`x = 3` is a local variable for a method or block (gone when the method is done)
-
-`@x = 3` is a instance variable owned by each object (it sticks around)
-
-`@@x = 3` is a class variable shared by all objects (it sticks around, too).
-
-## Instance vs. Class Methods
-
-Instance methods are defined like this
-
-~~~ruby
-class Word < String
-	def palindrome?
-		self == self.reverse
-	end
-end
-~~~
-
-and Class methods are defined like this
-
-~~~ruby
-class Word < String
-	def self.palindrome?(s)
-		s == s.reverse
-	end
-end
-~~~
-
-and you will use it like this
-
-~~~ruby
->> Word.palindrome? "aibohphobia"
-=> true
-~~~
 
 ## Ruby Gems
 
