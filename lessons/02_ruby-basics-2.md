@@ -20,7 +20,7 @@ p2 = Person.new
 puts p2
 ~~~
 
-As you can see, `p1` and `p2` are two different objects! Take care of this.
+As you can see, `p1` and `p2` are two different objects! Be aware of this...
 ~~~ruby
 puts p1 == p2
 ~~~
