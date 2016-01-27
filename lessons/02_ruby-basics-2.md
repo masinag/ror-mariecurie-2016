@@ -36,7 +36,7 @@ end
 p = Person.new
 ~~~
 
-Lets try to add one method more..
+Lets try to add one more method.
 ~~~ruby
 class Person
   def initialize
@@ -113,15 +113,15 @@ puts Person.hello   # Ciao!
 
 ## Local variables, class variables and instance variables
 
-Usually variables are written with lower case while constants are written in upper case.
+Usually variables are written with lower case while constants are written in upper case, by convention.
 
 ~~~ruby
 variable = "This is a variable"
 CONSTANT = "This is a constant"
 ~~~
 
-With the `@` symbol you can define instance variables (e.g. `@name`). An instance variable might assume different values among different instances. However, with no other methods it is not yet accessible.
-With the `@@` symbol you can define class variables (e.g.  `@@color`). A class variable is shared (have the same value) among all objects (instanes).
+With the `@` symbol you can define instance variables (e.g. `@name`). An instance variable can take different values among different instances. However it is not accessible without specific methods, called accessors.
+With the `@@` symbol you can define class variables (e.g. `@@color`). A class variable is shared (has the same value) among all objects (instances).
 
 ~~~ruby
 class Person
@@ -186,7 +186,7 @@ class Person
 end
 ~~~
 
-What is `#{@name}`? It is a shortcut that allows you to take the value of the variable `@name` and put it inside a string. In Ruby it is called String interpolation.
+What is `#{@name}`? It is a shortcut that allows you to take the value of the variable `@name` and put it inside a string. In Ruby this is called String interpolation.
 
 ~~~ruby
 a = 15;
@@ -197,9 +197,9 @@ puts "this is an array: #{array}"
 => "this is an array: [15, 7, 4, \"braai\"]"
 ~~~
 
-## More advance stuff, class again
+## More advanced stuff, class again
 
-Lets define the class `Word` as follows.
+Let's define the class `Word` as follows.
 
 ~~~ruby
 class Word
