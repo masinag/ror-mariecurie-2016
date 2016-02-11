@@ -8,7 +8,7 @@ def factorial(n)
   false
 end
 
-# Find the first factorial number greater than m
+# Find the smallest factorial number greater than m
 def factorial_bigger_than(m)
   false
 end
