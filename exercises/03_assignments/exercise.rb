@@ -25,3 +25,13 @@ class Point2D
     nil
   end
 end
+
+# TODO esercizio sulla validazione, produrre lista di errori
+class Book
+end
+
+# TODO esercizio algoritmico, trasformare una certa struttura dati
+class Problem
+  def self.algorithm
+  end
+end
