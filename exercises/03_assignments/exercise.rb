@@ -43,7 +43,7 @@ class Book
   # author deve essere una stringa non vuota
   # release_date deve essere un oggetto Date
   # publisher deve essere una stringa non vuota
-  # isbn deve essere un numero minore di 10**10 e maggiore di 0
+  # isbn deve essere un Fixnum minore di 10**10 e maggiore di 0
   def valid?
     nil
   end
