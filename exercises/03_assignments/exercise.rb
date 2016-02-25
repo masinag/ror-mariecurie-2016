@@ -1,8 +1,9 @@
-# ricorda: puoi usare la funzione `puts` per stampare del testo a video, per effettuare
-# il debug pero' e' meglio usare la funzione `p`
+# ricorda: puoi usare la funzione `puts` per stampare del testo a video, per
+# effettuare il debug pero' e' meglio usare la funzione `p`
 
 # esercizio 1
-# Rappresenta un punto in uno spazio di 2 dimensioni
+# Oggetto immutabile: un oggetto si dice immutabile se una volta inizializzato
+# non cambia mai stato
 class Point2D
   # costruisce un punto con coordinate (x,y)
   # nota che non e' necessario nessun controllo sul tipo di x e y
@@ -35,6 +36,8 @@ p1 = Point2D.new(0,0)
 #p p1.to_s
 
 # esercizio 2
+# Modello: un oggetto detto `modello` ha il compito di fare da interfaccia per
+# il database, e si occupa di operazioni come la validazione dell'input
 class Book
   attr_accessor :title, :author, :release_date, :publisher, :isbn
 
@@ -43,7 +46,7 @@ class Book
   # author deve essere una stringa non vuota
   # release_date deve essere un oggetto Date
   # publisher deve essere una stringa non vuota
-  # isbn deve essere un Fixnum minore di 10**10 e maggiore di 0
+  # isbn deve essere un Fixnum minore di 10**10 e maggiore di 10**9
   def valid?
     nil
   end
@@ -69,13 +72,14 @@ b.isbn = 8879839934
 #p b.errors.empty?
 
 # esercizio 3
+# Algoritmi, Duck Typing
 class Problem
-  # duck typing
   # dato in input un oggetto, restituisce true se e' un oggetto di classe
   # vettore con elementi oggetti tutti di classe String o Fixnum; o se il
   # vettore e' vuoto.
   # restituisce false altrimenti
   def self.algorithm(input)
+    nil
   end
 end
 
