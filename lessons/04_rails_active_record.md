@@ -125,11 +125,15 @@ In order to delete or remove an article form the database, let's use the `.destr
 
 ~~~ruby
 first = Article.first
-first.destroy
+first.destroy # Or first.delete
 ~~~
 
-You can also delete all the articles as follows:
+You can also delete all the articles as follows
 
 ~~~ruby
-Article.destroy_all
+Article.destroy_all # Or Article.delete_all
 ~~~
+
+Note that the methods `destroy` and `delete`, `destroy_all` and `delete_all` actually are not the same.
+
+If you want to read more, you can find useful information [here](http://guides.rubyonrails.org/active_record_basics.html).
