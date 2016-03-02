@@ -120,18 +120,26 @@ end
 
 Migrations are a feature of Active Record that allows you to evolve your database schema over time without writing schema modifications in pure SQL.
 
- A schema starts off with nothing in it, and each migration modifies it to add or remove tables, columns, or entries.
+A schema starts off with nothing in it, and each migration modifies it to add or remove tables, columns, or entries.
 
- Migrations are stored as files in the db/migrate directory, one for each migration class. The name of the file is of the form YYYYMMDDHHMMSS_create_products.rb, that is to say a UTC timestamp identifying the migration followed by an underscore followed by the name of the migration.
+Migrations are stored as files in the `db/migrate` directory, one for each migration class. The name of the file is of the form YYYYMMDDHHMMSS_create_articles.rb, that is to say a UTC timestamp identifying the migration followed by an underscore followed by the name of the migration.
 
-As you might expect, Rails gives you some shortcuts in order to automatically generate these migrations.
+Rails gives you some shortcuts in order to automatically generate migrations. Let's try to generate an empty one.
 
 ~~~bash
 rails generate migration myfirstmigration
 ~~~
 
-will generate a file named `db/migrate/20160301140734_myfirstmigration.rb`.
-The file will look as follows:
+The above command will generate a file named `db/migrate/20160301140734_myfirstmigration.rb` which will looks like the following:
+
+~~~ruby
+class Myfirstmigration < ActiveRecord::Migration
+  def change
+  end
+end
+~~~
+
+Now, let's change a bit the articles table by adding a new column as follows.
 
 ~~~ruby
 class Myfirstmigration < ActiveRecord::Migration
@@ -143,10 +151,12 @@ end
 
 In order to apply these changes to the database we need to run the `rake db:migrate`command.
 
-In addition, Rails is smarter than that, and it allows you to automatically generate the same migration in one line (using the `AddXXXToYYY`or `RemoveXXXFromYYY`format form the command line)
+In addition, Rails is smarter than that, and it allows you to automatically generate the same migration in one line (using the `AddXXXToYYY`or `RemoveXXXFromYYY`format form the command line).
+
 ~~~bash
 rails generate migration AddWordCountToArticles word_count:integer
 ~~~
+
 Will generate the file `db/migrate/20160301142100_add_word_count_to_articles.rb` which will look like follows:
 
 ~~~ruby
@@ -156,3 +166,39 @@ class AddWordCountToArticles < ActiveRecord::Migration
   end
 end
 ~~~
+
+The change method is the primary way of writing migrations. It works for the majority of cases, where Active Record knows how to reverse the migration automatically. Currently, the change method supports only these migration definitions:
+
+- add_column
+- add_index
+- add_reference
+- add_timestamps
+- add_foreign_key
+- create_table
+- create_join_table
+- drop_table (must supply a block)
+- drop_join_table (must supply a block)
+- remove_timestamps
+- rename_column
+- rename_index
+- remove_reference
+- rename_table
+
+TODO: Up-down methods, Running Migrations, Setup the Database, Reset, seed.rb
+
+
+
+
+Hence, write down in your `db/seed.rb` file some Ruby instructions in order to create 200 Articles.
+
+~~~ruby
+200.times do |i|
+  Article.create(
+    title: "Article ##{i}",
+    description: "An article with a beautiful body. This is the article ##{i}.",
+    category: "sport"
+  )
+end
+~~~
+
+In order to run this file you need to run the `rake db:seed` command.
