@@ -184,12 +184,11 @@ The change method is the primary way of writing migrations. It works for the maj
 - remove_reference
 - rename_table
 
-TODO: Up-down methods, Running Migrations, Setup the Database, Reset, seed.rb
+The rake db:setup task will create the database, load the schema and initialize it with the seed data.
 
+The rake db:reset task will drop the database and set it up again. This is functionally equivalent to rake db:drop db:setup
 
-
-
-Hence, write down in your `db/seed.rb` file some Ruby instructions in order to create 200 Articles.
+Hence, write down in your `db/seed.rb` file some Ruby code in order to create 200 Articles.
 
 ~~~ruby
 200.times do |i|
