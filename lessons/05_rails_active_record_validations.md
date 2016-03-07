@@ -122,7 +122,7 @@ Migrations are a feature of Active Record that allows you to evolve your databas
 
 A schema starts off with nothing in it, and each migration modifies it to add or remove tables, columns, or entries.
 
-Migrations are stored as files in the `db/migrate` directory, one for each migration class. The name of the file is of the form YYYYMMDDHHMMSS_create_articles.rb, that is to say a UTC timestamp identifying the migration followed by an underscore followed by the name of the migration.
+Migrations are stored as files in the `db/migrate` directory, one for each migration class. The name of the file is of the form `YYYYMMDDHHMMSS_create_articles.rb`, that is to say a UTC timestamp identifying the migration followed by an underscore followed by the name of the migration.
 
 Rails gives you some shortcuts in order to automatically generate migrations. Let's try to generate an empty one.
 
@@ -184,11 +184,7 @@ The change method is the primary way of writing migrations. It works for the maj
 - remove_reference
 - rename_table
 
-The rake db:setup task will create the database, load the schema and initialize it with the seed data.
-
-The rake db:reset task will drop the database and set it up again. This is functionally equivalent to rake db:drop db:setup
-
-Hence, write down in your `db/seed.rb` file some Ruby code in order to create 200 Articles.
+Now, you might wonder how you can automatically store some resources in the development database. In order to do that, write down in your `db/seed.rb` file some Ruby code in order to create 200 Articles.
 
 ~~~ruby
 200.times do |i|
@@ -201,3 +197,7 @@ end
 ~~~
 
 In order to run this file you need to run the `rake db:seed` command.
+
+The `rake db:setup` task will create the database, load the schema and initialize it with the seed data.
+
+The `rake db:reset` task will drop the database and set it up again. This is functionally equivalent to `rake db:drop` and `rake db:setup`.
