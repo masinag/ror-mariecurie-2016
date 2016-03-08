@@ -25,7 +25,7 @@ a.save
 a
 ~~~
 
-..we get the following result:
+...we get the following result:
 
 ~~~bash
  => #<Article id: 1, title: nil, body: nil, category: nil, created_at: "2016-03-01 10:27:08", updated_at: "2016-03-01 10:27:08">
@@ -105,9 +105,9 @@ class Article < ActiveRecord::Base
   validates :title, uniqueness: true
   validates :category, inclusion: { in: %w(sport technology nature), message: "%{value} is not a valid category" }
 
-  validate :body_cannot_contains_stupid_words
+  validate :body_cannot_contain_stupid_words
 
-  def body_cannot_contains_stupid_words
+  def body_cannot_contain_stupid_words
     if not body.nil? and body.include? "stupid" then
       errors.add(:body, "can't contains the word stupid")
     end
