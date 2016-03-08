@@ -1,5 +1,6 @@
 # Author deve avere getters e setters per name e surname
 class Author
+  attr_accessor :name, :surname
 end
 
 =begin
@@ -10,6 +11,11 @@ Product deve avere un metodo :valid? che verifica che:
 * price è > 0
 =end
 class Product
+  attr_accessor :name, :producer, :code, :price
+
+  def valid?
+    not name.empty? and not producer.empty? and code.length == 6 and price > 0
+  end
 end
 
 =begin

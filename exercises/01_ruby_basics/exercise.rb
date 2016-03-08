@@ -1,16 +1,16 @@
 # Return a string of greeting
 def welcome_message
-  false
+  "Hello, World!"
 end
 
 # Implement the factorial function
 def factorial(n)
-  false
+  (1..n).inject(1){ |res, el| res * el }
 end
 
 # Find the first factorial number greater than m
 def factorial_bigger_than(m)
-  false
+  (1..1000).each {|n| return factorial(n) if factorial(n) > m}
 end
 
 # Find the longest string in an array
