@@ -8,7 +8,7 @@ def factorial(n)
   (1..n).inject(1){ |res, el| res * el }
 end
 
-# Find the first factorial number greater than m
+# Find the smallest factorial number greater than m
 def factorial_bigger_than(m)
   (1..1000).each {|n| return factorial(n) if factorial(n) > m}
 end

@@ -78,7 +78,7 @@ describe Person do
 
   context "#bmi" do
     it 'should return a person\'s BMI (weight / (height**2))' do
-      expect(person).to respond_to(:bmi).and_return(80.0 / (1.8 ** 2))
+      expect(person.bmi).to eq(80.0 / (1.8 ** 2))
     end
   end
 
@@ -88,12 +88,12 @@ describe Person do
       context "when BMI = #{bmi}" do
         it "should return #{key}" do
           allow(person).to receive(:bmi).and_return(bmi)
-          expect(person).to respond_to(:bmi_category).and_return(key)
+          expect(person.bmi_category).to eq(key)
         end
       end
     end
-    it 'should return healthy_weight when height=1.8 and weight=80.0' do
-      expect(person).to respond_to(:bmi_category).and_return(:healthy_weight)
+    it 'should return :healthy_weight when height=1.8 and weight=80.0' do
+      expect(person.bmi_category).to eq(:healthy_weight)
     end
   end
 
