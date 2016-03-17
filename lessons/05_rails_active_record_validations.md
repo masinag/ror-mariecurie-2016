@@ -110,6 +110,9 @@ class Article < ActiveRecord::Base
   def body_cannot_contain_stupid_words
     if not body.nil? and body.include? "stupid" then
       errors.add(:body, "can't contains the word stupid")
+      return false
+    else
+      return true
     end
   end
 
