@@ -10,7 +10,8 @@ class Problem
       { input: [], output: 1 },
       { input: [[1],2,3], output: 2 },
       { input: [[],2,3], output: 2 },
-      { input: [[[1],3],4], output: 3 }
+      { input: [[[1],3],4], output: 3 },
+      { input: [1,[2],[[3]]], output: 3 }
     ]
 
     examples.each do |ex|

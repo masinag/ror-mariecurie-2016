@@ -34,14 +34,15 @@ end
 class Problem
 
   def self.min_uppercase(input)
-    input.inject(nil) { |acc, s| acc = s if acc.nil? || (count_uppercase(s) < count_uppercase(acc)); acc }
+    # input.inject(nil) { |acc, s| acc = s if acc.nil? || (count_uppercase(s) < count_uppercase(acc)); acc }
+    input.min { |a,b| count_uppercase(a) <=> count_uppercase(b) }
   end
 
   def self.max_depth(input)
     unless input.is_a? Array
       return 0
     else
-      depth_of(input)
+      (input.map { |i| max_depth(i) }.max || 0) + 1
     end
   end
 
@@ -49,10 +50,6 @@ class Problem
 
   def self.count_uppercase s
     s.scan(/[A-Z]/).size
-  end
-
-  def self.depth_of a
-    a.inject(1) { |acc, i| i.is_a?(Array) ? acc + depth_of(i) : acc }
   end
 
 end
