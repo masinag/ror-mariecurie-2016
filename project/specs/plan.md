@@ -5,6 +5,8 @@ Piano di Sviluppo
 ---
 
 Primo ER Diagram
+![Schema ER version 01](https://raw.githubusercontent.com/ict4g/ror-mariecurie-2016/98fa0c8bb0bfa3c651a7b049d2f7b94e104c85e3/project/specs/schema/schema_v01.png)
+
 
 7 aprile
 ---
