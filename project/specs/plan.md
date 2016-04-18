@@ -15,6 +15,9 @@ Primo ER Diagram
 1. Introduzione al Processo di Sviluppo: dalle specifiche all'implementazione
 2. Realizzazione ad alto livello di Diagramma ER
 
+![Schema ER version 01](https://raw.githubusercontent.com/ict4g/ror-mariecurie-2016/master/project/specs/img/01.jpg)
+
+
 14 aprile
 ---
 
@@ -22,3 +25,7 @@ Primo ER Diagram
 2. Prioritizzazione User Stories
 3. Diagramma ER e aggiunta attributi
 4. Mockups
+
+![Schema ER version 02](https://raw.githubusercontent.com/ict4g/ror-mariecurie-2016/master/project/specs/img/02.jpg)
+
+![Arrtibuti attività](https://raw.githubusercontent.com/ict4g/ror-mariecurie-2016/master/project/specs/img/03.jpg)
