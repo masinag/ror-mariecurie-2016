@@ -28,4 +28,4 @@ Primo ER Diagram
 
 ![Schema ER version 02](https://raw.githubusercontent.com/ict4g/ror-mariecurie-2016/master/project/specs/img/02.jpg)
 
-![Arrtibuti attività](https://raw.githubusercontent.com/ict4g/ror-mariecurie-2016/master/project/specs/img/03.jpg)
+![Attributi attività](https://raw.githubusercontent.com/ict4g/ror-mariecurie-2016/master/project/specs/img/03.jpg)
