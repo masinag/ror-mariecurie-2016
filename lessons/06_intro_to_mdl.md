@@ -3,7 +3,7 @@
 
 ## Users Stories
 
-* Come utente voglio poter vedere la lista delle attività di volontariato disponibili visualizzando per ciascuna di esse  titolo, descrizione e categoria
+* Come utente voglio poter vedere la lista delle attività di volontariato disponibili visualizzando per ciascuna di esse  titolo, descrizione e categoria.
 
 * Come utente associato voglio poter creare un'attività inserendo titolo, descrizione e categoria e, una volta creata, voglio vederla nella lista delle attività.
 
@@ -124,4 +124,45 @@ And **add** the following in the `app/assets/stylesheets/application.css`:
   text-transform: none;
   text-decoration: none;
 }
+
+/* Per centrare */
+.page-content {
+  max-width: 1600px;
+  margin: auto;
+}
+~~~
+
+Now, let's take a look on cards! [https://getmdl.io/components/index.html#cards-section](https://getmdl.io/components/index.html#cards-section)
+
+Now that we are ready, we can use cards to represent activities in the homepage! Let's use them.
+
+But first, let's organize cards within a grid view. [https://getmdl.io/components/index.html#layout-section](https://getmdl.io/components/index.html#layout-section)
+
+First of all, let's edit the `app/views/activities/index.html.erb` view.
+
+~~~html
+<div class="mdl-grid">
+  <!-- The title occupies an entire row -->
+  <div class="mdl-cell mdl-cell--12-col">
+    <h1>Listing Activities</h1>
+  </div>
+  <!-- Here you can start with the loop -->
+  <% @activities.each do |activity| %>
+  <!-- mdl-card class is at the same level of mdl-cell -->
+  <div class="mdl-cell mdl-cell--4-col mdl-card">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text"><%= activity.title %></h2>
+      <!-- Here you can add a menu if you want: see menu page in mdl -->
+    </div>
+    <div class="mdl-card__supporting-text">
+      <%= activity.description %>
+      <br/>
+      <%= activity.category %>
+    </div>
+    <div class="mdl-card__actions">
+    <%= link_to 'Show', activity, :class => "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+    </div>
+  </div>
+  <% end %>
+</div>
 ~~~
