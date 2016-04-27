@@ -154,7 +154,7 @@ end
 
 In order to apply these changes to the database we need to run the `rake db:migrate`command.
 
-In addition, Rails is smarter than that, and it allows you to automatically generate the same migration in one line (using the `AddXXXToYYY`or `RemoveXXXFromYYY`format form the command line).
+In addition, Rails is smarter than that, and it allows you to automatically generate the same migration in one line (using the `AddXXXToYYY` or `RemoveXXXFromYYY`format form the command line).
 
 ~~~bash
 rails generate migration AddWordCountToArticles word_count:integer

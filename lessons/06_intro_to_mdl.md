@@ -30,7 +30,7 @@ root 'activities#index'
 Now, we might populate our database as we have done in the past lessons using the `rails console` command. However, a faster way to do it is to edit the `seeds.rb` file with the following ruby code.
 
 ~~~ruby
-50.times do |i|
+10.times do |i|
   Activity.create!(
     title: "Activity ##{i}",
     description: "This activity needs ##{i} students. They will have to help people in order to do something very useful.",
@@ -61,7 +61,7 @@ Now open `/app/views/layouts/application.html.erb` and edit it as follows:
 ~~~html
 <body>
   <!-- Always shows a header, even in smaller screens. -->
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button mdl-color--grey-200">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <!-- Title -->
@@ -86,7 +86,7 @@ Now open `/app/views/layouts/application.html.erb` and edit it as follows:
         <a class="mdl-navigation__link" href="">Link</a>
       </nav>
     </div>
-    <main class="mdl-layout__content mdl-color--grey-200">
+    <main class="mdl-layout__content">
       <div class="page-content">
         <%= yield %>
       </div>
@@ -142,27 +142,108 @@ First of all, let's edit the `app/views/activities/index.html.erb` view.
 
 ~~~html
 <div class="mdl-grid">
-  <!-- The title occupies an entire row -->
+  <div class="mdl-cell mdl-cell--12-col">
+    <p id="notice"><%= notice %></p>
+  </div>
   <div class="mdl-cell mdl-cell--12-col">
     <h1>Listing Activities</h1>
   </div>
-  <!-- Here you can start with the loop -->
   <% @activities.each do |activity| %>
-  <!-- mdl-card class is at the same level of mdl-cell -->
   <div class="mdl-cell mdl-cell--4-col mdl-card">
-    <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text"><%= activity.title %></h2>
-      <!-- Here you can add a menu if you want: see menu page in mdl -->
-    </div>
-    <div class="mdl-card__supporting-text">
-      <%= activity.description %>
-      <br/>
-      <%= activity.category %>
-    </div>
-    <div class="mdl-card__actions">
-    <%= link_to 'Show', activity, :class => "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
-    </div>
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text"><%= activity.title %></h2>
+        <!-- Here you can add a menu if you want: see menu page in mdl -->
+      </div>
+      <div class="mdl-card__supporting-text">
+        <%= activity.description %>
+        <br>
+        <%= activity.category %>
+      </div>
+      <div class="mdl-card__actions">
+        <%= link_to 'Show', activity, :class => "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+      </div>
   </div>
   <% end %>
+  <div class="mdl-cell mdl-cell--12-col">
+    <%= link_to 'New Activity', new_activity_path %>
+  </div>
 </div>
+~~~
+
+Now, that we have a nice interface, we can add validations, and reason on how errors appear in the views.
+
+~~~ruby
+class Activity < ActiveRecord::Base
+  validates :title, :description, :category, presence: true
+  validates :title, uniqueness: true
+end
+~~~
+
+Hence, try to change how the errors are displayed. In particular, you can edit all the activities views.
+An example of how we can adjust the
+
+Now, let's add the attribute `location` to Activities using the `AddXXXToYYY` form the command line.
+
+~~~bash
+rails generate migration AddLocationToActivities location:string
+~~~
+
+Let's add the location to all the views and in particular add a location for each activity in the `seeds.rb` file. You can do it as follows.
+
+~~~ruby
+10.times do |i|
+  Activity.create!(
+    title: "Activity ##{i}",
+    description: "This activity needs ##{i} students. They will have to help people in order to do something very useful.",
+    category: "elders",
+    location: "Pergine Valsugana, TN"
+  )
+end
+~~~
+
+
+
+
+
+## The Geocoder gem
+
+Add the gem `geocoder` in your `Gemfile`. For more info, please visit [https://github.com/alexreisner/geocoder](https://github.com/alexreisner/geocoder).
+
+~~~bash
+rails generate migration AddLatitudeAndLongitudeToActivities latitude:float longitude:float
+~~~
+
+And then, run the migration as usual.
+
+~~~bash
+rake db:migrate
+~~~
+
+
+
+## The Faker gem
+
+Add the gem `faker` in your `Gemfile`. For more info, please visit [https://github.com/stympy/faker](https://github.com/stympy/faker).
+
+~~~ruby
+group :development, :test do
+  gem 'faker'
+end
+~~~
+
+Then run `bundle install`.
+
+Finally, you are able to use the faker gem inside the `seeds.rb` file as follows.
+
+~~~ruby
+require 'faker'
+
+20.times do |i|
+  Activity.create!(
+    title: Faker::Hipster.sentence(3),
+    description: Faker::Hipster.paragraph(3),
+    category: "elders",
+    location: "Pergine Valsugana, TN"
+  )
+end
 ~~~
