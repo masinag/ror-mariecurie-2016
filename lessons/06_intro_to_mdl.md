@@ -49,7 +49,13 @@ Download the pack and unzip it. We are actually interested in only the following
 * material.min.css
 * material.min.js
 
-Let's import them in our application project.
+Let's import them in our application project by adding the following lines:
+
+~~~
+//= require material.min
+*= require material.min
+~~~
+
 
 Now open `/app/views/layouts/application.html.erb` and edit it as follows:
 * Within the `<head>` tag let's add the link to the material icons we will use in our application.
@@ -57,7 +63,7 @@ Now open `/app/views/layouts/application.html.erb` and edit it as follows:
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 ~~~
 
-* Then substitute the `<body>` with the following code.
+* Then substitute the `<body>` with the following code (Layouts -> Fixed Header in MDL).
 ~~~html
 <body>
   <!-- Always shows a header, even in smaller screens. -->
@@ -95,39 +101,59 @@ Now open `/app/views/layouts/application.html.erb` and edit it as follows:
 </body>
 ~~~
 
-Now, the title "CittadiniCrescono" changes appearance on mouse over. In order to fix it and keep it as it is, without transformation let's **remove** the following rules form the `app/assets/stylesheets/scaffolds.scss` file.
-~~~css
-a {
-  color: #000;
+Now, the title (or logo) "CittadiniCrescono" changes appearance on mouse over. In order to fix it and to keep it as it is, without transformation let's **delete** all the rules form the `app/assets/stylesheets/scaffolds.scss` file.
+Then **create** two new files named:
 
-  &:visited {
-    color: #666;
-  }
+* `app/assets/stylesheets/style.scss`
+* `app/assets/stylesheets/variables.scss`
 
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}
+Please, **edit** `variables.scss` and add the following:
+
+~~~scss
+/***************
+** COLORS
+***************/
+
+$white: #fff;
+$primary-color-dark:   #1976D2;
+$primary-color:        #2196F3;
+$primary-color-light:  #BBDEFB;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FF5252;
+$primary-text-color:   #212121;
+$secondary-text-color: #727272;
+$divider-color:        #B6B6B6;
+
+/***************
+** DETAILS
+***************/
+
+$max-width-content: 1100px;
+
 ~~~
 
-And **add** the following in the `app/assets/stylesheets/application.css`:
-~~~css
-.logo {
-  color: #fff;
-}
+For the color palette you can take a look also here: [http://www.materialpalette.com](http://www.materialpalette.com).
 
-.logo a,
-.logo a:visited,
-.logo a:hover {
-  color: #fff;
-  text-transform: none;
-  text-decoration: none;
+Now, let's **edit** the `style.scss` file as follows.
+
+~~~css
+@import "variables";
+
+.logo {
+  color: $white;
+
+  a,
+  a:visited,
+  a:hover {
+    @extend .logo;
+    text-transform: none;
+    text-decoration: none;
+  }
 }
 
 /* Per centrare */
 .page-content {
-  max-width: 1600px;
+  max-width: $max-width-content;
   margin: auto;
 }
 ~~~
@@ -149,10 +175,9 @@ First of all, let's edit the `app/views/activities/index.html.erb` view.
     <h1>Listing Activities</h1>
   </div>
   <% @activities.each do |activity| %>
-  <div class="mdl-cell mdl-cell--4-col mdl-card">
+  <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--12-col-phone mdl-card">
       <div class="mdl-card__title">
         <h2 class="mdl-card__title-text"><%= activity.title %></h2>
-        <!-- Here you can add a menu if you want: see menu page in mdl -->
       </div>
       <div class="mdl-card__supporting-text">
         <%= activity.description %>
@@ -161,12 +186,91 @@ First of all, let's edit the `app/views/activities/index.html.erb` view.
       </div>
       <div class="mdl-card__actions">
         <%= link_to 'Show', activity, :class => "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
+        <%= link_to 'Edit', edit_activity_path(activity), :class => "mdl-button mdl-js-button mdl-button--primary" %>
+        <%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' }, :class => "mdl-button mdl-js-button mdl-button--accent" %>
       </div>
   </div>
   <% end %>
-  <div class="mdl-cell mdl-cell--12-col">
-    <%= link_to 'New Activity', new_activity_path %>
-  </div>
+</div>
+~~~
+
+The description within the card might not be larger enough. Please add the following rule into our `style.scss` file.
+
+~~~css
+/* All'interno della card */
+.mdl-card__supporting-text {
+  width: auto;
+}
+~~~
+
+Now, we want to change the style of the `link_to` component created by Rails. We would like to make it a rounded button as the buttons we saw as components in mdl. In order to to that, you can write the following:
+
+~~~html
+<%= link_to new_activity_path do %>
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+    <i class="material-icons">add</i>
+  </button>
+<% end %>
+~~~
+
+In order to make it **VERY MATERIAL** :) let's add the following class to the `link_to` component by writing the following:
+
+~~~html
+<%= link_to new_activity_path, :class => "bottom-right-fixed" do %>
+~~~
+
+Add to the `style.scss` file the following rule
+~~~css
+.bottom-right-fixed {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 9;
+}
+~~~
+Here you are, your **material button** is there!
+
+
+In the same way you can edit all the other views. For example let's modify the `_form.html.erb` file from this:
+
+~~~html
+<div class="field">
+  <%= f.label :title %><br>
+  <%= f.text_field :title %>
+</div>
+<div class="field">
+  <%= f.label :description %><br>
+  <%= f.text_area :description %>
+</div>
+<div class="field">
+  <%= f.label :category %><br>
+  <%= f.text_field :category %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+~~~
+
+To this:
+
+~~~html
+<div class="mdl-textfield mdl-js-textfield">
+  <%= f.text_field :title, :class => "mdl-textfield__input", :id => "title" %>
+  <%= f.label :title, :class => "mdl-textfield__label", :for => "title"%>
+</div>
+<br/>
+<div class="mdl-textfield mdl-js-textfield">
+  <%= f.text_area :description, :class => "mdl-textfield__input", :id => "description" %>
+  <%= f.label :description, :class => "mdl-textfield__label", :for => "description"%>
+</div>
+<br/>
+<div class="mdl-textfield mdl-js-textfield">
+  <%= f.text_field :category, :class => "mdl-textfield__input", :id => "category" %>
+  <%= f.label :category, :class => "mdl-textfield__label", :for => "category"%>
+</div>
+<br/>
+<div class="actions">
+  <%= f.submit :class => "mdl-button mdl-js-button mdl-button--raised mdl-button--accent" %>
 </div>
 ~~~
 
@@ -175,20 +279,20 @@ Now, that we have a nice interface, we can add validations, and reason on how er
 ~~~ruby
 class Activity < ActiveRecord::Base
   validates :title, :description, :category, presence: true
-  validates :title, uniqueness: true
+  validates :title, uniqueness: true # Maybe-Maybe not
 end
 ~~~
 
 Hence, try to change how the errors are displayed. In particular, you can edit all the activities views.
 An example of how we can adjust the
 
-Now, let's add the attribute `location` to Activities using the `AddXXXToYYY` form the command line.
+Now, let's add the attribute `address` to Activities using the `AddXXXToYYY` form the command line.
 
 ~~~bash
-rails generate migration AddLocationToActivities location:string
+rails generate migration AddAddressToActivities address:string
 ~~~
 
-Let's add the location to all the views and in particular add a location for each activity in the `seeds.rb` file. You can do it as follows.
+Let's add the address to all the views, validations and in particular add an address for each activity in the `seeds.rb` file. You can do it as follows.
 
 ~~~ruby
 10.times do |i|
@@ -196,14 +300,10 @@ Let's add the location to all the views and in particular add a location for eac
     title: "Activity ##{i}",
     description: "This activity needs ##{i} students. They will have to help people in order to do something very useful.",
     category: "elders",
-    location: "Pergine Valsugana, TN"
+    address: "Pergine Valsugana, TN"
   )
 end
 ~~~
-
-
-
-
 
 ## The Geocoder gem
 
@@ -219,7 +319,17 @@ And then, run the migration as usual.
 rake db:migrate
 ~~~
 
+Add validations for address!
 
+~~~ruby
+validate :valid_address, if: -> { address.present? and address_changed? }
+​
+private
+
+def valid_address
+  errors.add(:address, s_("ValidationError|doesn't seem to be a valid address")) if Geocoder.search(address).empty?  
+end
+~~~
 
 ## The Faker gem
 
