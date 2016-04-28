@@ -65,9 +65,9 @@ Now open `/app/views/layouts/application.html.erb` and edit it as follows:
 
 * Then substitute the `<body>` with the following code (Layouts -> Fixed Header in MDL).
 ~~~html
-<body>
+<body class="mdl-color--grey-200">
   <!-- Always shows a header, even in smaller screens. -->
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button mdl-color--grey-200">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <!-- Title -->
@@ -175,7 +175,7 @@ First of all, let's edit the `app/views/activities/index.html.erb` view.
     <h1>Listing Activities</h1>
   </div>
   <% @activities.each do |activity| %>
-  <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--12-col-phone mdl-card">
+  <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-card">
       <div class="mdl-card__title">
         <h2 class="mdl-card__title-text"><%= activity.title %></h2>
       </div>
