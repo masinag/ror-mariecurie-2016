@@ -191,8 +191,10 @@ Add to the `activities.scss` file the following rule
 }
 ~~~
 Here you are, your **material button** is there!
-Congratulations!! You first material design home page is ready and it should look as follows!
 
+Congratulations!! You first material design homepage is ready and it should look as follows!
+
+![You first material design homepage](https://raw.githubusercontent.com/ict4g/ror-mariecurie-2016/master/project/specs/img/05.jpg "homepage")
 
 
 
