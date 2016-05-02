@@ -102,58 +102,29 @@ Now open `/app/views/layouts/application.html.erb` and edit it as follows:
 ~~~
 
 Now, the title (or logo) "CittadiniCrescono" changes appearance on mouse over. In order to fix it and to keep it as it is, without transformation let's **delete** all the rules form the `app/assets/stylesheets/scaffolds.scss` file.
-Then **create** two new files named:
+Then **edit** the `app/assets/stylesheets/activities.scss` file as follows.
 
-* `app/assets/stylesheets/style.scss`
-* `app/assets/stylesheets/variables.scss`
-
-Please, **edit** `variables.scss` and add the following:
-
-~~~scss
-/***************
-** COLORS
-***************/
-
-$white: #fff;
-$primary-color-dark:   #1976D2;
-$primary-color:        #2196F3;
-$primary-color-light:  #BBDEFB;
-$primary-color-text:   #FFFFFF;
-$accent-color:         #FF5252;
-$primary-text-color:   #212121;
-$secondary-text-color: #727272;
-$divider-color:        #B6B6B6;
-
-/***************
-** DETAILS
-***************/
-
-$max-width-content: 1100px;
-
-~~~
-
-For the color palette you can take a look also here: [http://www.materialpalette.com](http://www.materialpalette.com).
-
-Now, let's **edit** the `style.scss` file as follows.
 
 ~~~css
-@import "variables";
 
+/* Per il logo */
 .logo {
-  color: $white;
+  color: #fff;
+  text-transform: none;
+  text-decoration: none;
+}
 
-  a,
-  a:visited,
-  a:hover {
-    @extend .logo;
+.logo a,
+.logo a:visited,
+.logo a:hover {
+    color: #fff;
     text-transform: none;
     text-decoration: none;
-  }
 }
 
 /* Per centrare */
 .page-content {
-  max-width: $max-width-content;
+  max-width: 1050px;
   margin: auto;
 }
 ~~~
@@ -162,7 +133,7 @@ Now, let's take a look on cards! [https://getmdl.io/components/index.html#cards-
 
 Now that we are ready, we can use cards to represent activities in the homepage! Let's use them.
 
-But first, let's organize cards within a grid view. [https://getmdl.io/components/index.html#layout-section](https://getmdl.io/components/index.html#layout-section)
+But first, let's organize cards within a grid view [https://getmdl.io/components/index.html#layout-section](https://getmdl.io/components/index.html#layout-section).
 
 First of all, let's edit the `app/views/activities/index.html.erb` view.
 
@@ -194,15 +165,6 @@ First of all, let's edit the `app/views/activities/index.html.erb` view.
 </div>
 ~~~
 
-The description within the card might not be larger enough. Please add the following rule into our `style.scss` file.
-
-~~~css
-/* All'interno della card */
-.mdl-card__supporting-text {
-  width: auto;
-}
-~~~
-
 Now, we want to change the style of the `link_to` component created by Rails. We would like to make it a rounded button as the buttons we saw as components in mdl. In order to to that, you can write the following:
 
 ~~~html
@@ -219,7 +181,7 @@ In order to make it **VERY MATERIAL** :) let's add the following class to the `l
 <%= link_to new_activity_path, :class => "bottom-right-fixed" do %>
 ~~~
 
-Add to the `style.scss` file the following rule
+Add to the `activities.scss` file the following rule
 ~~~css
 .bottom-right-fixed {
   position: fixed;
@@ -229,6 +191,9 @@ Add to the `style.scss` file the following rule
 }
 ~~~
 Here you are, your **material button** is there!
+Congratulations!! You first material design home page is ready and it should look as follows!
+
+
 
 
 In the same way you can edit all the other views. For example let's modify the `_form.html.erb` file from this:
