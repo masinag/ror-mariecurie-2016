@@ -249,7 +249,6 @@ end
 ~~~
 
 Hence, try to change how the errors are displayed. In particular, you can edit all the activities views.
-An example of how we can adjust the
 
 Now, let's add the attribute `address` to Activities using the `AddXXXToYYY` form the command line.
 
