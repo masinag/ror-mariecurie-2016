@@ -189,4 +189,82 @@ class ActivitiesController < ApplicationController
 end
 ~~~
 
-image_tag with the url_logo
+in Organizations/show.html.erb
+
+~~~html
+
+<div class="organization_header">
+
+  <div class="organization_header_content">
+    <%= image_tag @organization.url_logo, height: '180', width: '180', :class => "logo_img" %>
+    <div class="organization_header_info">
+      <p><%= @organization.name %></p>
+      <p><%= @organization.description %></p>
+      <p><%= @organization.category %></p>
+    </div>
+  </div>
+
+</div>
+
+<% @organization.activities.each do |activity| %>
+  <li>
+    <span><%= activity.title %></span><br />
+    <span><%= activity.description %></span><br />
+    <span><%= activity.category %></span><br />
+  </li>
+<% end %>
+~~~
+
+~~~css
+.organization_header {
+  height: 400px;
+  position: relative;
+  background: url('http://mag.corriereal.info/wordpress/wp-content/uploads/2016/01/Docenti-1.jpg');
+  background-size: cover;
+}
+
+.organization_header_content {
+  position: absolute;
+  left: 40px;
+  bottom: -40px;
+}
+
+.organization_header_info {
+  float: right;
+  padding-left: 50px;
+  bottom: 0px;
+}
+
+.logo_img {
+  background: white;
+  padding: 5px;
+  box-shadow: 1px 1px 2px #666;
+  border-radius: 5px;
+}
+~~~
+
+## Partials
+
+We need partials!!!!
+
+
+~~~html
+<div class="organization_header">
+  <div class="opacity"></div>
+  <div class="organization_header_content">
+    <%= image_tag @organization.url_logo, height: '180', width: '180', :class => "logo_img" %>
+    <div class="organization_header_info">
+      <p><%= @organization.name %></p>
+      <p><%= @organization.description %></p>
+      <p><%= @organization.category %></p>
+    </div>
+  </div>
+</div>
+<br />
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <p id="notice"><%= notice %></p>
+  </div>
+  <%= render @organization.activities %>
+</div>
+~~~
