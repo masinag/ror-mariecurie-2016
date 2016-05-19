@@ -1,7 +1,7 @@
 # Authentication
 We need a system for our application in order to **authenticate** the users. For web based applications, such system has to be based onto **cookies**.
 
-### Managing dependencies, trough `bundle`
+### Managing dependencies, through `bundle`
 In order to implement this feature quickly and not get bogged into implementation details, we will use the **sorcery** gem.
 
 In the app's Gemfile add:
